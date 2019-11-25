@@ -18,6 +18,11 @@ public class Java8Tester {
 		});
 	}
 
+	// 使用java 8排序
+	private void sortUsingJava8(List<String> names) {
+		Collections.sort(names, (s1, s2) -> s1.compareTo(s2));
+	}
+
 	public static void main(String[] args) {
 
 		List<String> names1 = new ArrayList<String>();
@@ -33,10 +38,15 @@ public class Java8Tester {
 		names2.add("Taobao ");
 		names2.add("Baidu ");
 		names2.add("Sina ");
-		
+
 		Java8Tester tester = new Java8Tester();
 		System.out.println("使用 Java 7 语法");
 		tester.sortUsingJava7(names1);
 		System.out.println(names1);
+		
+		tester.sortUsingJava8(names2);
+		System.out.println("使用 Java 8 语法");
+		System.out.println(names2);
+		
 	}
 }
