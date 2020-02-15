@@ -28,6 +28,7 @@ public class FitsUtils {
 		FitsFile file = null;
 		try {
 			file = new FitsFile(path);
+			System.out.printf("\nfile is in FITS format：%s\n\n", FitsFile.isFitsFile(new File(path)));
 		} catch (FitsException e) {
 			System.out.println("Error: is not a FITS file >" + path + "<");
 		} catch (IOException e) {
@@ -60,6 +61,8 @@ public class FitsUtils {
 	private static void fileValidate(FitsFile file, Integer i) {
 		FitsHDUnit hdu = file.getHDUnit(i);
 		FitsHeader hdr = hdu.getHeader();
+		System.out.print("----------");
+		System.out.println(hdr.getKeyword("CHECKSUM"));
 		int noKw = hdr.getNoKeywords();
 		int type = hdr.getType();
 		int size = (int) hdr.getDataSize();
