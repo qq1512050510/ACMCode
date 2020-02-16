@@ -19,6 +19,7 @@ Hadoop 2.8.5采用的JDK版本为JDK8
 
 Hadoop 1.x.x版本，只需引入1个jar：
 ```hadoop-core```
+
 Hadoop 2.x.x版本需要引入4个jar：
 ```
 hadoop-common
