@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * 根类加载器（bootstrap class loader）
  * 获得根类加载器所加载的核心类库,并会看到本机安装的Java环境变量指定的jdk中提供的核心jar包路径
- * @author adp
+ * @author 
  *
  */
 public class ClassLoaderTest {
