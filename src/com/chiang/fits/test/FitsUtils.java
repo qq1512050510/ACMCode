@@ -11,6 +11,7 @@ import java.util.*;
 
 import org.eso.fits.Fits;
 import org.eso.fits.FitsColumn;
+import org.eso.fits.FitsData;
 import org.eso.fits.FitsException;
 import org.eso.fits.FitsFile;
 import org.eso.fits.FitsHDUnit;
@@ -18,6 +19,7 @@ import org.eso.fits.FitsHeader;
 import org.eso.fits.FitsKeyword;
 import org.eso.fits.FitsMatrix;
 import org.eso.fits.FitsTable;
+
 
 import java.io.*;
 
@@ -63,6 +65,9 @@ public class FitsUtils {
 		FitsHeader hdr = hdu.getHeader();
 		System.out.print("----------");
 		System.out.println(hdr.getKeyword("CHECKSUM"));
+		System.out.println(hdr.getKeyword("DATASUM"));
+		FitsData fitsData = hdu.getData();
+		
 		int noKw = hdr.getNoKeywords();
 		int type = hdr.getType();
 		int size = (int) hdr.getDataSize();
