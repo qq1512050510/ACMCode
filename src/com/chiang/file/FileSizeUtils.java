@@ -36,7 +36,7 @@ public class FileSizeUtils {
 		String path = "./src/testFile";
 		File file = new File(path);
 		System.out.println(file.length());
-		System.out.println(FileSizeUtils.byteFormat(file.length(), true));
+		System.out.println(FileSizeUtils.byteFormat(2048, true));
 	}
 
 }
