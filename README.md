@@ -30,6 +30,9 @@ hadoop-client
 
 [maven download](https://mvnrepository.com/) 
 
+#设计模式
+##代理模式
+com.chiang.designmodel.proxy;
 
 
 
