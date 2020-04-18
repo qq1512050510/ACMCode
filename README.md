@@ -35,7 +35,7 @@ hadoop-client
 com.chiang.designmodel.proxy;\
 代理模式(Proxy Pattern)是一个使用频率非常高的模式。
 定义如下
-Provide a surrogate or placeholder for another object to control access to it.
-
-
+Provide a surrogate or placeholder for another object to control access to it.\
+强制代理模式\
+强制代理的角色只能通过代理进行接口调用
 
