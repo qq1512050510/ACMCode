@@ -32,7 +32,10 @@ hadoop-client
 
 #设计模式
 ##代理模式
-com.chiang.designmodel.proxy;
+com.chiang.designmodel.proxy;\
+代理模式(Proxy Pattern)是一个使用频率非常高的模式。
+定义如下
+Provide a surrogate or placeholder for another object to control access to it.
 
 
 
