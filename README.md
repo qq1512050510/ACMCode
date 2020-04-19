@@ -37,5 +37,10 @@ com.chiang.designmodel.proxy;\
 定义如下
 Provide a surrogate or placeholder for another object to control access to it.\
 强制代理模式\
-强制代理的角色只能通过代理进行接口调用
+强制代理的角色只能通过代理进行接口调用/
+```
+com.chiang.designmodel.proxy.inter.impl.ForceGamePlayer
+```
+ForceGamePlayer类是强制代理角色。
+
 
