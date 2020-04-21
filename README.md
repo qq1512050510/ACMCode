@@ -41,6 +41,10 @@ Provide a surrogate or placeholder for another object to control access to it.\
 ```
 com.chiang.designmodel.proxy.inter.impl.ForceGamePlayer
 ```
-ForceGamePlayer类是强制代理角色。
-
+ForceGamePlayer类是强制代理角色。\
+个性代理 
+###动态代理
+动态代理是在实现阶段不用关心谁代理谁，而在运行阶段才指定代理哪个对象。\
+相对来说，之前的代理类的方式都是静态代理。\
+AOP（Aspect Oriented Programming）面向切面编程核心采用动态代理机制。 
 

@@ -2,8 +2,9 @@ package com.chiang.designmodel.proxy.inter.impl;
 
 import com.chiang.designmodel.proxy.inter.IForceGamePlayer;
 import com.chiang.designmodel.proxy.inter.IGamePlayer;
+import com.chiang.designmodel.proxy.inter.IProxy;
 
-public class ForceGamePlayProxy implements IForceGamePlayer {
+public class ForceGamePlayProxy implements IForceGamePlayer, IProxy {
     private ForceGamePlayer gamePlayer = null;
 
     public ForceGamePlayProxy(ForceGamePlayer gamePlayer) {
@@ -28,5 +29,10 @@ public class ForceGamePlayProxy implements IForceGamePlayer {
     @Override
     public IForceGamePlayer getProxy() {
         return this;
+    }
+
+    @Override
+    public void count() {
+        System.out.println("费用：¥200");
     }
 }
