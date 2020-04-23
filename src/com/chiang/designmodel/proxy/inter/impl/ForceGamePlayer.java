@@ -1,9 +1,6 @@
 package com.chiang.designmodel.proxy.inter.impl;
 
 import com.chiang.designmodel.proxy.inter.IForceGamePlayer;
-import com.chiang.designmodel.proxy.inter.IGamePlayer;
-import com.sun.tools.javac.util.StringUtils;
-import org.apache.commons.lang.ObjectUtils;
 
 public class ForceGamePlayer implements IForceGamePlayer {
     private String username = "";
