@@ -20,7 +20,7 @@ public class GamePlayIH implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object result = method.invoke(this.obj, args);
         if(method.getName().equalsIgnoreCase("login")){
-            System.out.println("有人在登录系统！");
+            System.out.println("提示：有人在登录系统！");
         }
         return result;
     }
