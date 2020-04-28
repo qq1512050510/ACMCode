@@ -14,5 +14,11 @@ public class Sort6 {
         System.out.println(words);
         System.out.println(wordNotNull);
         Map test = new LinkedHashMap();
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("afbsfasdfsa");
+        System.out.println(stringBuffer.reverse());
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("afbsfasdfsa");
+        System.out.println(stringBuilder.reverse());
     }
 }
