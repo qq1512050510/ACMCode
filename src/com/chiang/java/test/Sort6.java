@@ -1,8 +1,7 @@
 package com.chiang.java.test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+
 import static java.util.Comparator.*;
 
 public class Sort6 {
@@ -11,5 +10,6 @@ public class Sort6 {
         //words.sort(Comparator.nullsLast(Comparator.reverseOrder()));
         words.sort(nullsFirst(reverseOrder()));
         System.out.print(words);
+        Map test = new LinkedHashMap();
     }
 }
