@@ -9,7 +9,10 @@ public class Sort6 {
         List words = Arrays.asList("A","c","E",null,"r","p",null);
         //words.sort(Comparator.nullsLast(Comparator.reverseOrder()));
         words.sort(nullsFirst(reverseOrder()));
-        System.out.print(words);
+        List wordNotNull = Arrays.asList("a","e","f","k","c");
+        wordNotNull.sort(reverseOrder());
+        System.out.println(words);
+        System.out.println(wordNotNull);
         Map test = new LinkedHashMap();
     }
 }
