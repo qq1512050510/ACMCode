@@ -75,4 +75,12 @@ com.chiang.designmodel.iterator
 |discover error |throws Exception   |onError(Exception) |
 |complete       |!hasNext()         |onCompleted()      |
 Observalbe 是反应式编程API的使用方式。 \
-反应式编程时常见的观察者模式的一种延伸。如果将迭代器模式模式看作拉模式
+反应式编程时常见的观察者模式的一种延伸。如果将迭代器模式模式看作拉模式,\
+那观察者模式便是推模式。被订阅者（Publisher）主动推送数据给订阅者（Subscriber），\
+触发onNext方法。异常和完成时触发另外两个方法。如果Publisher发布消息太快了，\
+超过Subscriber的处理速度怎么办？BackPressure的由来，Reactive Programming\
+框架需要提供机制，使得Subscriber能够控制消费信息的速度。
+
+
+
+
