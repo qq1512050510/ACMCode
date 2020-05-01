@@ -1,4 +1,4 @@
-package com.chiang.prototype;
+package com.chiang.designmodel.prototype;
 
 public class Mail implements Cloneable {
     private String receiver;

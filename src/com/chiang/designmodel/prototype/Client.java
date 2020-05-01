@@ -1,4 +1,4 @@
-package com.chiang.prototype;
+package com.chiang.designmodel.prototype;
 
 import java.lang.String;
 import java.util.Random;

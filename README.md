@@ -52,8 +52,27 @@ AOP编程没有使用什么新的技术，但是它对我们的设计、编程�
 
 ## 原型模式
 ```
-com.chiang.prototype
+com.chiang.designmodel.prototype
 ```
 浅拷贝，深拷贝
 
+## 迭代器模式
+迭代器模式（Iterator Pattern）,提供一个方法访问容器中的一个元素，而不暴露该对象内部细节。
 
+
+````
+com.chiang.designmodel.iterator
+````
+
+
+## 观察者模式
+
+反应式编程与迭代器模式对比\
+
+|event          |Iterable (pull)    |Observable (push)  |
+----|----|----|
+|retrieve data  |T next()           |onNext(T)          |
+|discover error |throws Exception   |onError(Exception) |
+|complete       |!hasNext()         |onCompleted()      |
+Observalbe 是反应式编程API的使用方式。 \
+反应式编程时常见的观察者模式的一种延伸。如果将迭代器模式模式看作拉模式

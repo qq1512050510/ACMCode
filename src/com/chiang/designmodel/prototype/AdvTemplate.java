@@ -1,4 +1,4 @@
-package com.chiang.prototype;
+package com.chiang.designmodel.prototype;
 
 public class AdvTemplate {
     private String advSubject = "**银行活动！";
