@@ -1,5 +1,6 @@
 package com.chiang.acm;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,11 +8,21 @@ import java.util.List;
 
 public class ChessLocation {
     public static void main(String[] args) {
-        byte a = 10;
+        byte a = -1;
         Byte b = 1;
         System.out.println("byte==>min-max:" + Byte.MIN_VALUE + "~" + Byte.MAX_VALUE + ",位数：" + Byte.SIZE);
         System.out.println(a >> 1);
         ChessLocation.calculateLocation();
+        System.out.println(String.valueOf(a));
+        //System.out.println(new BigInteger(String.valueOf(1),a).toString(16));
+        //int aint = a & 0xFF;
+        int aint = a ;
+        //String hv = Integer.toHexString(aint);
+        String hv = Integer.toBinaryString(aint);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(hv);
+        System.out.println(aint);
+        System.out.println(stringBuilder.toString());
     }
 
     /**
