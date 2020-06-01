@@ -19,6 +19,8 @@ public class APlusB {
         int[] sumKey = new int[2];
         sumKey[0] = 1;
         int[] ints = new int[]{0, 1};
+        List<Integer> intList = Arrays.stream(ints).boxed().collect(Collectors.toList());
+
         Map<Integer,Integer> hash = new HashMap<Integer, Integer>();
         List<Integer> l1 = new ArrayList<Integer>();
         Collections.reverse(l1);
