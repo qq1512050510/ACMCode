@@ -46,6 +46,13 @@
 			<version>${hadoop.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>co.paralleluniverse</groupId>
+			<artifactId>quasar-core</artifactId>
+			<version>0.7.9</version>
+			<classifier>jdk8</classifier>
+		</dependency>
+
 		<!-- jdk 使用idea 不需要配置这个 -->
 		<dependency>
 			<groupId>jdk.tools</groupId>
