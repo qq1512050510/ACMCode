@@ -1,7 +1,7 @@
 package com.chiang.thread;
 
 public class ThreadDaemon {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -10,6 +10,10 @@ public class ThreadDaemon {
                 }
             }
         };
+
+        ThreadDaemon threadTest = new ThreadDaemon();
+        threadTest.wait();
+        threadTest.notify();
 
         thread.setDaemon(true);
         thread.start();
