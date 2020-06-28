@@ -54,7 +54,7 @@ public class TaskCallable implements Callable<String> {
          * shutDownNow，遍历线程池中的工作线程，逐个调用线程的interrupt方法来中断线程。
          * 注意：如果存在无法中断的任务，可能永远无法终止。
          */
-        pool.shutdown();
+        //pool.shutdown();
         pool.shutdownNow();
         System.out.println(done.get());
     }
