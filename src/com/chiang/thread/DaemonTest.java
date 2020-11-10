@@ -5,9 +5,9 @@ public class DaemonTest {
     public static void main(String[] args) throws InterruptedException {
         Runnable threadDaemon = new ThreadTestR();
         Thread thread = new Thread(threadDaemon);
-        thread.setDaemon(true);
+        //thread.setDaemon(true);
         thread.start();
-        //thread.join();
+        thread.join();
         for (int i = 0; i < Math.pow(2, 8); i++) {
             System.out.println(String.format("%s,%d", Thread.currentThread().getName(), i));
         }
