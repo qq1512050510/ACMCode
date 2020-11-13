@@ -99,3 +99,109 @@ class ReentrantLockThread {
     }
 
 }
+
+/**
+ * @Description ReentrantLock 非condition 实现
+ * print ABC
+ */
+class Main {
+    public static void main(String[] args) {
+        PrintBean print = new PrintBean();
+        new Thread(new PrintA(print)).start();
+        new Thread(new PrintB(print)).start();
+        new Thread(new PrintC(print)).start();
+    }
+
+
+    static class PrintA implements Runnable {
+        private final PrintBean print;
+
+        PrintA(PrintBean print) {
+            this.print = print;
+        }
+
+        @Override
+        public void run() {
+            print.printA();
+        }
+    }
+
+    static class PrintB implements Runnable {
+        private final PrintBean print;
+
+        PrintB(PrintBean print) {
+            this.print = print;
+        }
+
+        @Override
+        public void run() {
+            print.printB();
+        }
+    }
+
+    static class PrintC implements Runnable {
+        private final PrintBean print;
+
+        PrintC(PrintBean print) {
+            this.print = print;
+        }
+
+        @Override
+        public void run() {
+            print.printC();
+        }
+    }
+
+    static class PrintBean {
+        private final Lock lock = new ReentrantLock();
+        private int num = 1;
+
+        public void printA() {
+            while (true) {
+                lock.lock();
+                try {
+
+                    if (num == 1) {
+                        System.out.println("A");
+                    }
+                    num = 2;
+
+                } finally {
+                    lock.unlock();
+                }
+
+            }
+        }
+
+        public void printB() {
+            while (true) {
+
+                lock.lock();
+                try {
+                    if (num == 2) {
+                        System.out.println("B");
+                    }
+                    num = 3;
+                } finally {
+                    lock.unlock();
+                }
+            }
+        }
+
+        public void printC() {
+            while (true) {
+
+                lock.lock();
+                try {
+                    if (num == 3) {
+                        System.out.println("C");
+                    }
+                    num = 1;
+                } finally {
+                    lock.unlock();
+                }
+            }
+
+        }
+    }
+}
