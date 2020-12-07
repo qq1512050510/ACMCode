@@ -164,7 +164,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<!--accept-->
-			<!--reject-->
+			<!--pull request reject-->
 
 		</plugins>
 	</build>
