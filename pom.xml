@@ -161,6 +161,7 @@
             <!--pull request reject-->
             <!--develop edit-->
             <!--1.0-->
+            <!--1.1.1-->
         </plugins>
     </build>
 </project>
