@@ -160,7 +160,7 @@
             <!--accept-->
             <!--pull request reject-->
             <!--develop edit-->
-
+            <!--1.0-->
         </plugins>
     </build>
 </project>
