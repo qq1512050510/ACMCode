@@ -163,6 +163,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!--accept-->
+			<!--reject-->
 
 		</plugins>
 	</build>
