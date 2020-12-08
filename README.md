@@ -67,7 +67,7 @@ com.chiang.designmodel.iterator
 
 ## 观察者模式
 
-反应式编程与迭代器模式对比\
+反应式编程与迭代器模式对比
 
 |event          |Iterable (pull)    |Observable (push)  |
 ----|----|----|
