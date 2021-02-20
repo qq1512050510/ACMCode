@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author PF14EBBQ
@@ -22,6 +23,23 @@ public class StreamLearn {
         System.out.println(intList.stream().filter(dish -> {
             return dish.amount >= 2;
         }).collect(Collectors.toList()));
+        List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 0);
+        /**
+         * limit(n) 取前n个元素 skip(n) 跳过前n个元素
+         *
+         */
+        numbers.stream().filter(i -> i % 2 == 0).limit(3).distinct().forEach(System.out::println);
+        System.out.println("---------");
+        numbers.stream().filter(i -> i % 2 == 0).skip(3).distinct().forEach(System.out::println);
+        List<String> words = Arrays.asList(new String[]{"Java 8", "Lambdas", "In", "Action"});
+        System.out.println(words.stream().map(String::length).collect(Collectors.toList()));
+        Stream<String> streamOfWords = Arrays.stream((String[]) words.toArray());
+        System.out.println(words.stream().map(word -> word.split("")).map(Arrays::stream).distinct().collect(Collectors.toList()));
+        System.out.println(words.stream().map(word -> word.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList()));
+        /**
+         * flatMap
+         */
+
     }
 
     private static class Dish {
