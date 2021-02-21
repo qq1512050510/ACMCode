@@ -35,11 +35,26 @@ public class StreamLearn {
         System.out.println(words.stream().map(String::length).collect(Collectors.toList()));
         Stream<String> streamOfWords = Arrays.stream((String[]) words.toArray());
         System.out.println(words.stream().map(word -> word.split("")).map(Arrays::stream).distinct().collect(Collectors.toList()));
-        System.out.println(words.stream().map(word -> word.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList()));
         /**
          * flatMap
          */
-
+        System.out.println(words.stream().map(word -> word.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList()));
+        List<Integer> ints = Arrays.asList(1, 2, 3, 4, 6);
+        System.out.println(ints.stream().map(n -> n * n).collect(Collectors.toList()));
+        List<Integer> number1 = Arrays.asList(1, 2, 3);
+        List<Integer> number2 = Arrays.asList(3, 4);
+        System.out.println(number1.stream().map(i -> number2.stream().map(j -> new int[]{i, j})).collect(Collectors.toList()));
+        System.out.println(number1.stream().flatMap(i -> number2.stream().map(j -> new int[]{i, j})).collect(Collectors.toList()));
+        System.out.println("----");
+        number1.stream().map(i -> {
+            System.out.println(i);
+            return i;
+        });
+        number1.stream().flatMap(i -> {
+            System.out.println(i);
+            return null;
+        });
+        System.out.println("----------");
     }
 
     private static class Dish {
