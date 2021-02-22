@@ -1,12 +1,12 @@
 package com.chiang.acm;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class FindRepeatNum {
     public int solution(int[] nums) {
         Set<Integer> set = new HashSet<>();
+        Vector vector;
+        Stack stack;
         Arrays.stream(nums).forEach(num -> {
             set.add(num);
         });

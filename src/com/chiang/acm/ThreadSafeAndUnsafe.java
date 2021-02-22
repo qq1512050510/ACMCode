@@ -24,6 +24,7 @@ public class ThreadSafeAndUnsafe {
 class Count {
 
     public void count() {
+
         AtomicInteger num = new AtomicInteger(0);
         for (int i = 0; i <= 10; i++) {
             num.addAndGet(i);
