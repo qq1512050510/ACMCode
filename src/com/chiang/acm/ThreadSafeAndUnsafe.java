@@ -1,5 +1,7 @@
 package com.chiang.acm;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author PF14EBBQ
  */
@@ -20,12 +22,12 @@ public class ThreadSafeAndUnsafe {
 }
 
 class Count {
-    private int num=0;
 
     public void count() {
+        AtomicInteger num = new AtomicInteger(0);
         for (int i = 0; i <= 10; i++) {
-            num += i;
+            num.addAndGet(i);
         }
-        System.out.println(Thread.currentThread().getName() + "-" + num);
+        System.out.println(Thread.currentThread().getName() + "-" + num.get());
     }
 }
