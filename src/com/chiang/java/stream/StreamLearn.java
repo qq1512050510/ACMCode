@@ -3,6 +3,7 @@ package com.chiang.java.stream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -55,6 +56,28 @@ public class StreamLearn {
             return null;
         });
         System.out.println("----------");
+
+        System.out.println(number1.stream().allMatch(num -> num >= 1));
+        Optional<Integer> numOpt = number1.stream().filter(num -> num > 1).findAny();
+        System.out.println(numOpt);
+        numOpt.ifPresent(num -> System.out.println(num));
+        /**
+         *归约
+         */
+        System.out.println(number1.stream().reduce(1, (a, b) -> {
+            return a * b;
+        }));
+        /**
+         * 返回整数
+         */
+        System.out.println(number1.stream().reduce(0, Integer::sum));
+        /**
+         * 返回Optional
+         */
+        System.out.println(number1.stream().reduce((a, b) -> a + b));
+
+        System.out.println(number1.stream().reduce(Integer::max));
+        System.out.println(number1.stream().reduce(Integer::min).get());
     }
 
     private static class Dish {
