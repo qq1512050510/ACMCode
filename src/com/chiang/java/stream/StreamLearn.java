@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -78,6 +79,22 @@ public class StreamLearn {
 
         System.out.println(number1.stream().reduce(Integer::max));
         System.out.println(number1.stream().reduce(Integer::min).get());
+        StreamLearn stream = new StreamLearn();
+        stream.flatMapTest();
+    }
+
+    /**
+     * shengcheng
+     */
+    public void pythagoreanTriples() {
+        IntStream.rangeClosed(0, 100);
+    }
+
+    public void flatMapTest() {
+        String[] strings = new String[]{"hello welcome", "world hello", "hello world", "hello world welcome"};
+        Stream<String> streams = Stream.of(strings);
+        Stream.of(strings).flatMap(str -> Arrays.stream(str.split(" "))).distinct().forEach(System.out::println);
+        Stream.of(strings).map(s -> s.split(" ")).forEach(System.out::println);
     }
 
     private static class Dish {
