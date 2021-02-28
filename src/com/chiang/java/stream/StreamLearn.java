@@ -13,16 +13,16 @@ import java.util.stream.Stream;
  */
 public class StreamLearn {
     public static void main(String[] args) {
-        List<Dish> intList = new ArrayList<com.chiang.java.stream.StreamLearn.Dish>();
-        intList.add(new Dish("a", 1));
-        intList.add(new Dish("b", 2));
-        intList.add(new Dish("c", 3));
-        intList.stream().filter(dish -> {
+        List<Dish> dishes = new ArrayList<com.chiang.java.stream.StreamLearn.Dish>();
+        dishes.add(new Dish("a", 1));
+        dishes.add(new Dish("b", 2));
+        dishes.add(new Dish("c", 3));
+        dishes.stream().filter(dish -> {
             return dish.amount >= 2;
         }).forEach(dish -> {
             System.out.println(dish.getAmount());
         });
-        System.out.println(intList.stream().filter(dish -> {
+        System.out.println(dishes.stream().filter(dish -> {
             return dish.amount >= 2;
         }).collect(Collectors.toList()));
         List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 0);
@@ -47,6 +47,14 @@ public class StreamLearn {
         List<Integer> number2 = Arrays.asList(3, 4);
         System.out.println(number1.stream().map(i -> number2.stream().map(j -> new int[]{i, j})).collect(Collectors.toList()));
         System.out.println(number1.stream().flatMap(i -> number2.stream().map(j -> new int[]{i, j})).collect(Collectors.toList()));
+
+        System.out.println(dishes.stream().mapToInt(Dish::getAmount).sum());
+        System.out.println(dishes.stream().mapToInt(Dish::getAmount).getClass().getName());
+
+        System.out.println(number1.stream().mapToInt(Integer::valueOf).sum());
+
+        System.out.println(number1.stream().mapToInt(Integer::valueOf).sum());
+
         System.out.println("----");
         number1.stream().map(i -> {
             System.out.println(i);
@@ -81,13 +89,15 @@ public class StreamLearn {
         System.out.println(number1.stream().reduce(Integer::min).get());
         StreamLearn stream = new StreamLearn();
         stream.flatMapTest();
+        stream.pythagoreanTriples();
     }
 
     /**
      * shengcheng
      */
     public void pythagoreanTriples() {
-        IntStream.rangeClosed(0, 100);
+        Stream<int[]> pythagoreanTriples = IntStream.rangeClosed(1, 100).boxed().flatMap(a -> IntStream.rangeClosed(a, 100).filter(b -> Math.sqrt(a * a + b * b) % 1 == 0).mapToObj(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)}));
+        pythagoreanTriples.limit(15).forEach(t -> System.out.println(t[0] + "," + t[1] + "," + t[2]));
     }
 
     public void flatMapTest() {
